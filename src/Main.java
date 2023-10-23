@@ -25,6 +25,6 @@ public class Main {
         Circle circ = new Circle(50);
         circ.setPosition(150, 170);
         System.out.println(circ.getX() + ", " + circ.getY());
-        add
+
     }
 }
