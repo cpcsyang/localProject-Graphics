@@ -7,6 +7,12 @@ public class Main {
     }
 
     public static void run() {
+        Canvas.setCanvasSize(250,350);
+
+        int width = Canvas.getCanvasWidth();
+        int height = Canvas.getCanvasHeight();
+        System.out.println("Canvas size: " + width + ", " + height);
+
         Circle circ = new Circle(50);
         circ.setPosition(150, 200);
         circ.setColor(Color.blue);
@@ -22,8 +28,6 @@ public class Main {
         txt.setColor(Color.black);
         Canvas.add(txt);
 
-        Canvas.setCanvasSize(250,350);
-        System.out.println(Canvas.getNumShapes() + " shapes on the canvas.");
-        System.out.println(Canvas.getCanvasWidth() + ", " +Canvas.getCanvasHeight());
+
     }
 }
