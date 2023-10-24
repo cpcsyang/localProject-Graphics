@@ -1,30 +1,29 @@
-import java.util.Scanner;   // for user Scanner such as user input
 import java.awt.*;          // for graphics
 
 public class Main {
-    private static DrawingPanel panel = new DrawingPanel();
-    private static Graphics2D g2 = panel.getGraphics();
     public static void main(String[] args) {
         run();
-    }
-
-    public static void add(Shape obj) {
-
+        System.out.println("finished.");
     }
 
     public static void run() {
-
-        g2.drawLine(25, 75, 175, 25);
-        g2.setColor(Color.cyan);
-        g2.fillOval(100, 100, 150, 200);
-        g2.setColor(Color.black);
-        g2.drawOval(100, 100, 150, 200);
-        g2.setColor(Color.red);
-        g2.fillRect(250, 300, 200, 50);
-
         Circle circ = new Circle(50);
-        circ.setPosition(150, 170);
-        System.out.println(circ.getX() + ", " + circ.getY());
+        circ.setPosition(150, 200);
+        circ.setColor(Color.blue);
+        Canvas.add(circ);
 
+        Rectangle rect = new Rectangle(100, 30);
+        rect.setPosition(100, 250);
+        rect.setColor(Color.red);
+        Canvas.add(rect);
+
+        Text txt = new Text("Hello World!", "30pt Arial");
+        txt.setPosition(150, 200);
+        txt.setColor(Color.black);
+        Canvas.add(txt);
+
+        Canvas.setCanvasSize(250,350);
+        System.out.println(Canvas.getNumShapes() + " shapes on the canvas.");
+        System.out.println(Canvas.getCanvasWidth() + ", " +Canvas.getCanvasHeight());
     }
 }
