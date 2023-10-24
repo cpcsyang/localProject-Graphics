@@ -289,7 +289,7 @@ import javax.swing.filechooser.FileFilter;
  * @author Stuart Reges (University of Washington) and Marty Stepp
  * @version 4.07, 2022/04/07 (BJP 5th edition)
  */
-public final class DrawingPanel implements ImageObserver {
+public class DrawingPanel implements ImageObserver {	// removed final to test Graphics.java
 	// class constants
 	private static final Color GRID_LINE_COLOR      = new Color(64, 64, 64, 128);   // color of grid lines on panel
 	private static final Object LOCK                = new Object();                 // object used for concurrency locking
@@ -753,6 +753,7 @@ public final class DrawingPanel implements ImageObserver {
 	 */
 	public DrawingPanel() {
 		this(DEFAULT_WIDTH, DEFAULT_HEIGHT);
+		System.out.println("public DrawingPanel()");
 	}
 
 	/**
@@ -763,6 +764,7 @@ public final class DrawingPanel implements ImageObserver {
 	public DrawingPanel(int width, int height) {
 		ensureInRange("width", width, 0, MAX_SIZE);
 		ensureInRange("height", height, 0, MAX_SIZE);
+		System.out.println("public DrawingPanel(int width, int height)");
 		
 		checkAnimationSettings();
 		
